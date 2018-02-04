@@ -1,12 +1,11 @@
 #! /usr/bin/env julia
 
-function main()
-    presenters = ARGS[1:end]
-    order = presenters |> shuffle
+function show_lt_order(x::AbstractArray{String})
+    order = x |> shuffle
     for (index, value) in enumerate(order)
         println("$index: $value")
     end
 end
 
 
-main()
+show_lt_order(ARGS[1:end])
